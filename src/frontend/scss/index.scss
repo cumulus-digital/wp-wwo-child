@@ -4,10 +4,14 @@
 	}
 }
 
-.masthead .logo  {
+body > .masthead .logo  {
 	@include hover {
 		filter: none;
 	}
 }
+body > .footer .logo {
+	display: none;
+}
+
 
 @import './hc-offcanvas/_';
