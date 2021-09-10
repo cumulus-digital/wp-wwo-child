@@ -1,0 +1,42 @@
+/*
+ * Apply customizer values to HC-OffCanvas Menu
+ */
+
+// Background color
+.hc-offcanvas-nav .nav-container,
+.hc-offcanvas-nav .nav-wrapper,
+.hc-offcanvas-nav ul {
+	background-image: var(--#{$PREFIX}-file-main_menu-background-cssurl);
+	background-position: var(--#{$PREFIX}-setting-main_menu-background_position);
+	background-size: var(--#{$PREFIX}--setting-main_menu-background-size);
+	background-repeat: var(--#{$PREFIX}--setting-main_menu-background-repeat);
+
+	background-color: var(--#{$PREFIX}-color-main_menu-background);
+
+	color: var(--#{$PREFIX}-color-main_menu-foreground);
+}
+.hc-offcanvas-nav .nav-highlight>.nav-item-wrapper .nav-item-link {
+	background-color: transparent;
+}
+
+// Text color
+.hc-offcanvas-nav .nav-content>h2,
+.hc-offcanvas-nav .nav-content>h3,
+.hc-offcanvas-nav .nav-content>h4,
+.hc-offcanvas-nav .nav-content>h5,
+.hc-offcanvas-nav .nav-content>h6 {
+	color: inherit;
+}
+.hc-offcanvas-nav .nav-item-link,
+.hc-offcanvas-nav li.nav-close a,
+.hc-offcanvas-nav .nav-back a {
+	color: inherit;
+}
+
+// Item hover color
+.hc-offcanvas-nav:not(.touch-device) li:not(.nav-item-custom) a:not([disabled]):hover,
+.hc-offcanvas-nav:not(.touch-device) li:not(.nav-item-custom) a:not([disabled]):focus-visible {
+	color: var(--#{$PREFIX}-color-main_menu-foreground-hover_foreground);
+	background-color: var(--#{$PREFIX}-color-main_menu-foreground-hover_background);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}

@@ -1,0 +1,46 @@
+/*
+ * Hacks to HC-OffCanvas Menu
+ */
+
+// Fix direction of sub-menu arrows on right-aligned menus
+.hc-offcanvas-nav.nav-position-right .nav-next span,
+.hc-offcanvas-nav.nav-position-right .nav-back span {
+	transform: rotate(180deg);
+}
+
+// Fix divider for longer menu items with sub-menus
+.hc-offcanvas-nav a.nav-next:before {
+	height: calc(100% - 18px);
+}
+
+// Fix odd display of close button
+.hc-offcanvas-nav .nav-close-button {
+
+	span::before,
+	span::after {
+		width: 9px;
+		height: 9px;
+		margin-top: -4.5px;
+	}
+}
+
+// Menu links should have a focus style for accessibility
+.hc-offcanvas-nav a:focus-visible {
+	outline: 1px dotted #fff !important;
+}
+
+// Differentiate back links better
+.hc-offcanvas-nav .nav-back {
+	margin-bottom: .5em;
+	padding-bottom: .5em;
+	border-bottom: 2px solid rgba(255,255,255,0.3);
+
+	a {
+		padding-left: 40px;
+	}
+
+	span {
+		position: absolute;
+		left: 0;
+	}
+}

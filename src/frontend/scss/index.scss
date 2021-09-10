@@ -1,0 +1,13 @@
+@supports (backdrop-filter: blur(.25em)) {
+	body > .masthead {
+		backdrop-filter: blur(.25em);
+	}
+}
+
+.masthead .logo  {
+	@include hover {
+		filter: none;
+	}
+}
+
+@import './hc-offcanvas/_';

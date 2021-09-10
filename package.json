@@ -1,0 +1,47 @@
+{
+  "name": "wp-wwo-child",
+  "version": "1.0.0",
+  "description": "Child theme for Westwood One",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "format:js": "wp-scripts format-js",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:md:docs": "wp-scripts lint-md-docs",
+    "lint:md:js": "wp-scripts lint-md-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "packages-update": "wp-scripts packages-update",
+    "start": "wp-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cumulus-digital/wp-wwo-child"
+  },
+  "keywords": [
+    "wordpress",
+    "cmls",
+    "wwo",
+    "westwood",
+    "wetwoodone"
+  ],
+  "author": "vena",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/cumulus-digital/wp-wwo-child/issues"
+  },
+  "homepage": "https://github.com/cumulus-digital/wp-wwo-child#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "^18.0.0",
+    "hc-offcanvas-nav": "^6.1.3",
+    "jquery": "^3.6.0"
+  },
+  "browserslist": [
+    "last 3 versions or > 1%"
+  ],
+  "dependencies": {
+    "bourbon": "^7.0.0"
+  }
+}

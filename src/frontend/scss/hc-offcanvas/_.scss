@@ -1,0 +1,83 @@
+/*
+ * Customization for HC-OffCanvas Menu
+ */
+
+$hc-offcanvas-nav-transition-duration: .15s;
+$hc-offcanvas-nav-transition-timing-function: linear;
+
+@import 'hc-offcanvas-nav/src/scss/core';
+@import 'hc-offcanvas-nav/src/scss/theme-carbon';
+@import './hacks.scss';
+@import './customizer.scss';
+@import './search.scss';
+@import './social.scss';
+
+// Prevent body from losing its height when hc-nav disables it
+body.hc-nav-open {
+	min-height: auto;
+}
+
+.masthead .menu-container .hamburger::after {
+	background-color: var(--#{$PREFIX}-color-main_menu-background);
+}
+
+// Open off-canvas below fixed masthead
+.hc-offcanvas-nav,
+.hc-offcanvas-nav .nav-container {
+	top: var(--#{$PREFIX}-masthead-height);
+	height: calc(100vh - var(--#{$PREFIX}-masthead-height));
+	z-index: 199;
+
+	body.admin-bar & {
+		top: calc(var(--#{$PREFIX}-masthead-height) + 32px);
+		height: calc(100vh - var(--#{$PREFIX}-masthead-height) - 32px);
+		@media screen and (max-width: 782px) {
+			top: calc(var(--#{$PREFIX}-masthead-height) + 46px);
+			height: calc(100vh - var(--#{$PREFIX}-masthead-height) - 46px);
+		}
+	}
+
+	.level-open::after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+		backdrop-filter: blur(.045em) brightness(0.65);
+		z-index: 999;
+	}
+
+	.nav-wrapper {
+		box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.5) !important;
+	}
+}
+.hc-offcanvas-nav.disable-body::after {
+	z-index: -1;
+}
+.hc-offcanvas-nav.nav-open,
+.hc-offcanvas-nav.nav-open .nav-container {
+	@media (min-width: $width-max) {
+		right: calc(50% - ( #{$width-max} / 2 ) - 0.6px);
+	}
+
+	.nav-close {
+		display: none;
+	}
+}
+
+// Level titles
+.hc-offcanvas-nav .nav-content>h2,
+.hc-offcanvas-nav .nav-content>h3,
+.hc-offcanvas-nav .nav-content>h4,
+.hc-offcanvas-nav .nav-content>h5,
+.hc-offcanvas-nav .nav-content>h6 {
+	padding: 15px 15px 0;
+}
+
+// Highlight current page
+.hc-offcanvas-nav .nav-highlight>.nav-item-wrapper .nav-item-link {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) -50%, var(--#{$PREFIX}-color-main_menu-foreground) 1500%);
+	text-shadow: 1px 1px 1px var(--#{$PREFIX}-color-main_menu-background);
+}

@@ -1,0 +1,43 @@
+.hc-offcanvas-nav .search {
+	form {
+		display: flex;
+		gap: .5em;
+
+		&:focus-within {
+			input {
+				opacity: 1;
+			}
+		}
+	}
+	input {
+		display: inline-block;
+		background: var(--#{$PREFIX}-color-content-background);
+		font-size: 1em;
+		line-height: 1;
+		border: 0;
+		border-radius: .15em;
+		padding: .25em .5em;
+		width: 100%;
+		opacity: 0.75;
+		transition: all .15s;
+
+		&:focus,
+		&:focus-visible {
+			outline: var(--#{$PREFIX}-color-highlight) auto 1px;
+		}
+
+		&[type="submit"] {
+			border: 1px solid transparent;
+			background: var(--#{$PREFIX}-color-brand);
+			color: #fff;
+			line-height: 1.2;
+			margin: 0;
+			width: min-content;
+
+			@include hover {
+				background: var(--#{$PREFIX}-color-highlight);
+				text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+			}
+		}
+	}
+}
