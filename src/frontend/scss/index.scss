@@ -4,9 +4,11 @@
 	}
 }
 
-body > .masthead .logo  {
+body > .masthead .logo a  {
 	@include hover {
-		filter: none;
+		img {
+			filter: none;
+		}
 	}
 }
 body > .footer .logo {
