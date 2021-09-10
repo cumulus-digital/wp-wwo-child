@@ -1,6 +1,11 @@
 .hc-offcanvas-nav .social {
+	display: flex;
+	gap: .25em;
+	align-items: center;
+	justify-content: center;
+
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 102%);
-	padding-top: .5em;
+	padding: .5em 0;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -15,5 +20,6 @@
 	a {
 		background-color: var(--#{$PREFIX}-color-main_menu-foreground);
 		transition: all .2s !important;
+		mask-size: 65%;
 	}
 }
