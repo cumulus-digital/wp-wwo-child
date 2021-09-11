@@ -29,7 +29,7 @@ body.hc-nav-open {
 	--viewport-height: 100vh;
 	// Only use on iOS Safari
 	@supports (-webkit-touch-callout: none) {
-		--viewport-height: -webkit-fill-available;
+		max-height: -webkit-fill-available;
 	}
 	--menu-height: calc(var(--viewport-height) - var(--#{$PREFIX}-masthead-height));
 	top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
