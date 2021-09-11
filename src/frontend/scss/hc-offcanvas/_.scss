@@ -85,7 +85,7 @@ body.hc-nav-open {
 // Backdrop when disabling body
 .hc-offcanvas-nav .nav-wrapper:after,
 .hc-offcanvas-nav:after {
-	background: linear-gradient(0deg, var(--#{$PREFIX}-color-brand) -200%, rgba(0,0,0,0.5) 100%);
+	background: linear-gradient(0deg, var(--#{$PREFIX}-color-brand) -150%, rgba(0,0,0,0.3) 100%);
 }
 .hc-offcanvas-nav.disable-body.nav-open:after,
 .hc-offcanvas-nav .sub-level-open:after {
