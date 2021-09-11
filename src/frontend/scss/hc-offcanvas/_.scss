@@ -26,7 +26,7 @@ body.hc-nav-open {
 .hc-offcanvas-nav .nav-container {
 	// needed to fix minification error
 	--wp-admin-bar-height: -1px;
-	--menu-height: calc(var(--vh) - var(--#{$PREFIX}-masthead-height));
+	--menu-height: calc(var(--vh100) - var(--#{$PREFIX}-masthead-height));
 	top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
 	height: calc(var(--menu-height) - var(--wp-admin-bar-height));
 	z-index: 199;
