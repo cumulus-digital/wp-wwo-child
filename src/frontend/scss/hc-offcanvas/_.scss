@@ -24,7 +24,8 @@ body.hc-nav-open {
 // Open off-canvas below fixed masthead
 .hc-offcanvas-nav,
 .hc-offcanvas-nav .nav-container {
-	--wp-admin-bar-height: 0px;
+	// Trick to avoid minification issue with "0px" becomming "0"
+	--wp-admin-bar-height: calc(1px - 1px);
 	--viewport-height: 100vh;
 	// Only use on iOS Safari
 	@supports (-webkit-touch-callout: none) {
