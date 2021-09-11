@@ -24,16 +24,21 @@ body.hc-nav-open {
 // Open off-canvas below fixed masthead
 .hc-offcanvas-nav,
 .hc-offcanvas-nav .nav-container {
-	top: var(--#{$PREFIX}-masthead-height);
-	height: calc(100vh - var(--#{$PREFIX}-masthead-height));
+	--wp-admin-bar-height: 0px;
+	--viewport-height: 100vh;
+	// Only use on iOS Safari
+	@supports (-webkit-touch-callout: none) {
+		--viewport-height: -webkit-fill-available;
+	}
+	--menu-height: calc(var(--viewport-height) - var(--#{$PREFIX}-masthead-height));
+	top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
+	height: calc(var(--menu-height) - var(--wp-admin-bar-height));
 	z-index: 199;
 
 	body.admin-bar & {
-		top: calc(var(--#{$PREFIX}-masthead-height) + 32px);
-		height: calc(100vh - var(--#{$PREFIX}-masthead-height) - 32px);
+		--wp-admin-bar-height: 32px;
 		@media screen and (max-width: 782px) {
-			top: calc(var(--#{$PREFIX}-masthead-height) + 46px);
-			height: calc(100vh - var(--#{$PREFIX}-masthead-height) - 46px);
+			--wp-admin-bar-height: 46px;
 		}
 	}
 
