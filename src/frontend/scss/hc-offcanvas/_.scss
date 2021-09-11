@@ -26,12 +26,7 @@ body.hc-nav-open {
 .hc-offcanvas-nav .nav-container {
 	// needed to fix minification error
 	--wp-admin-bar-height: -1px;
-	--viewport-height: 100vh;
-	// Only use on iOS Safari
-	@supports (-webkit-touch-callout: none) {
-		max-height: -webkit-fill-available;
-	}
-	--menu-height: calc(var(--viewport-height) - var(--#{$PREFIX}-masthead-height));
+	--menu-height: calc(var(--vh) - var(--#{$PREFIX}-masthead-height));
 	top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
 	height: calc(var(--menu-height) - var(--wp-admin-bar-height));
 	z-index: 199;
