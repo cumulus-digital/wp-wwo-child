@@ -81,3 +81,13 @@ body.hc-nav-open {
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0) -50%, var(--#{$PREFIX}-color-main_menu-foreground) 1500%);
 	text-shadow: 1px 1px 1px var(--#{$PREFIX}-color-main_menu-background);
 }
+
+// Backdrop when disabling body
+.hc-offcanvas-nav .nav-wrapper:after,
+.hc-offcanvas-nav:after {
+	background: linear-gradient(0deg, var(--#{$PREFIX}-color-brand) -200%, rgba(0,0,0,0.5) 100%);
+}
+.hc-offcanvas-nav.disable-body.nav-open:after,
+.hc-offcanvas-nav .sub-level-open:after {
+	//backdrop-filter: blur(0.05em);
+}
