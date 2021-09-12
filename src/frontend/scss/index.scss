@@ -15,5 +15,15 @@ body > .footer .logo {
 	display: none;
 }
 
+// Tag clouds
+.wp-block-tag-cloud a,
+.widget_tag_cloud a,
+.widget-container .wp-block-latest-posts a {
+	text-decoration: none;
+
+	@include hover {
+		text-decoration: underline;
+	}
+}
 
 @import './hc-offcanvas/_';
