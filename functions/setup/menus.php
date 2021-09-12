@@ -24,7 +24,8 @@ function makeMenu( $location, $options = [] ) {
 		'link_after'      => '',
 		'items_wrap'      => '<ul itemscope itemtype="http://www.schema.org/SiteNavigationElement" class="%2$s">%3$s</ul>',
 		'depth'           => 0,
-		'walker'          => new LeveledMenuWalker(),
+		//'walker'          => new LeveledMenuWalker(),
+		'walker' => new \CMLS_Base\CleanMenuWalker(),
 	];
 	$resolved = \array_merge( $defaults, $options );
 	\wp_nav_menu( $resolved );
