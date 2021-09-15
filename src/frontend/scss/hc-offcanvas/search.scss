@@ -1,4 +1,9 @@
 .hc-offcanvas-nav .search {
+
+	.nav-item-link {
+		padding-top: 0;
+	}
+
 	form {
 		display: flex;
 		gap: .5em;

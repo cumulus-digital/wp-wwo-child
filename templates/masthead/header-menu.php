@@ -27,6 +27,7 @@ if ( has_header_menu() ):
 		<?php endif; ?>
 		<ul class="menu-bottom">
 			<li data-nav-custom-content>
+				<a href="/affiliate/affiliates-and-producers-login/" class="affiliate-login">Affiliates/Producers Login</a>
 				<?php if ( \CMLS_Base\has_social_menu() ): ?>
 					<?php \CMLS_Base\social_menu( [
 						'menu_class' => 'social social-link-icons',

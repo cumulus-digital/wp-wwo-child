@@ -28,3 +28,10 @@
 .hc-offcanvas-nav a:focus-visible {
 	outline: 1px dotted #fff !important;
 }
+
+// Remove default font size
+.hc-offcanvas-nav .nav-item-link,
+.hc-offcanvas-nav li.nav-close a,
+.hc-offcanvas-nav .nav-back a {
+	font-size: inherit;
+}
