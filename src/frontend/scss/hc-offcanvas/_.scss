@@ -170,11 +170,12 @@ body.hc-nav-open {
 			background: rgba(0,0,0,0.5);
 			color: var(--#{$PREFIX}-color-main_menu-foreground);
 			letter-spacing: .01em;
+			line-height: 1;
 			font-size: .8em;
 			text-align: center;
 			text-transform: uppercase;
 			font-weight: bold;
-			padding: .75em;
+			padding: 1em .5em;
 			opacity: 0.8;
 
 			&::before {
