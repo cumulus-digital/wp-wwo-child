@@ -4,8 +4,7 @@
 
 // Background color
 .hc-offcanvas-nav .nav-container,
-.hc-offcanvas-nav .nav-wrapper,
-.hc-offcanvas-nav ul {
+.hc-offcanvas-nav .nav-wrapper {
 	background-image: var(--#{$PREFIX}-file-main_menu-background-cssurl);
 	background-position: var(--#{$PREFIX}-setting-main_menu-background_position);
 	background-size: var(--#{$PREFIX}--setting-main_menu-background-size);
@@ -14,6 +13,10 @@
 	background-color: var(--#{$PREFIX}-color-main_menu-background);
 
 	color: var(--#{$PREFIX}-color-main_menu-foreground);
+
+	ul {
+		background: transparent;
+	}
 }
 .hc-offcanvas-nav .nav-highlight>.nav-item-wrapper .nav-item-link {
 	background-color: transparent;

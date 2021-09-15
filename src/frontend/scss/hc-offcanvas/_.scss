@@ -21,23 +21,49 @@ body.hc-nav-open {
 	background-color: var(--#{$PREFIX}-color-main_menu-background);
 }
 
-// Open off-canvas below fixed masthead
-.hc-offcanvas-nav,
-.hc-offcanvas-nav .nav-container {
-	// needed to fix minification error
-	--wp-admin-bar-height: -1px;
-	--menu-height: calc(var(--vh100) - var(--#{$PREFIX}-masthead-height));
-	top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
-	height: calc(var(--menu-height) - var(--wp-admin-bar-height));
-	z-index: 199;
+.hc-offcanvas-nav {
 
-	body.admin-bar & {
-		--wp-admin-bar-height: 32px;
-		@media screen and (max-width: 782px) {
-			--wp-admin-bar-height: 46px;
+	// Open below fixed masthead
+	&,& .nav-container {
+		display: flex;
+		flex-direction: column;
+
+		// needed to fix minification error
+		--wp-admin-bar-height: -1px;
+		--menu-height: calc(var(--vh100) - var(--#{$PREFIX}-masthead-height));
+		top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
+		height: calc(var(--menu-height) - var(--wp-admin-bar-height));
+		z-index: 199;
+
+		body.admin-bar & {
+			--wp-admin-bar-height: 32px;
+
+			@media screen and (max-width: 782px) {
+				--wp-admin-bar-height: 46px;
+			}
 		}
 	}
 
+	ul.menu {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&.has-social-menu .nav-wrapper-0 > .nav-content {
+		padding-bottom: 3em;
+	}
+
+	.nav-custom-content {
+		padding: inherit;
+		font-size: inherit;
+	}
+
+	// Ensure close button doesn't show
+	.nav-close {
+		display: none;
+	}
+
+	// Blur levels in the background
 	.level-open::after {
 		content: "";
 		position: absolute;
@@ -50,72 +76,88 @@ body.hc-nav-open {
 		z-index: 999;
 	}
 
+	// Add a shadow to each level
 	.nav-wrapper {
 		box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.4) !important;
 	}
-}
-.hc-offcanvas-nav.disable-body::after {
-	z-index: -1;
-}
-.hc-offcanvas-nav.nav-open,
-.hc-offcanvas-nav.nav-open .nav-container {
-	@media (min-width: $width-max) {
-		right: calc(50% - ( #{$width-max} / 2 ) - 0.6px);
+
+	// Force background overlay below fixed masthead
+	&.disable-body::after {
+		z-index: -1;
 	}
 
-	.nav-close {
-		display: none;
-	}
-}
-
-// Level titles
-.hc-offcanvas-nav .nav-content>h2,
-.hc-offcanvas-nav .nav-content>h3,
-.hc-offcanvas-nav .nav-content>h4,
-.hc-offcanvas-nav .nav-content>h5,
-.hc-offcanvas-nav .nav-content>h6 {
-	padding: .75em .75em 0;
-}
-
-// Highlight current page
-.hc-offcanvas-nav .nav-highlight>.nav-item-wrapper .nav-item-link {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0) -50%, var(--#{$PREFIX}-color-main_menu-foreground) 1500%);
-	text-shadow: 1px 1px 1px var(--#{$PREFIX}-color-main_menu-background);
-}
-
-// Backdrop when disabling body
-.hc-offcanvas-nav .nav-wrapper:after,
-.hc-offcanvas-nav:after {
-	background: linear-gradient(0deg, var(--#{$PREFIX}-color-brand) -150%, rgba(0,0,0,0.3) 100%);
-}
-.hc-offcanvas-nav.disable-body.nav-open:after,
-.hc-offcanvas-nav .sub-level-open:after {
-	//backdrop-filter: blur(0.05em);
-}
-
-// Level title
-.hc-offcanvas-nav .nav-content>.level-title {
-	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 100%);
-	padding: .75em 0;
-}
-
-// Divider for links with submenues
-.hc-offcanvas-nav a.nav-next:before {
-	background: linear-gradient(0deg, var(--#{$PREFIX}-color-main_menu-foreground) -400%, rgba(0,0,0,0) 300%);
-}
-
-// Differentiate back links better
-.hc-offcanvas-nav .nav-back {
-	//margin-bottom: .25em;
-	//padding-bottom: .25em;
-
-	a {
-		opacity: 0.8;
-		padding-left: 40px;
+	// Backdrop when disabling body
+	&:after, .nav-wrapper:after {
+		background: linear-gradient(0deg, var(--#{$PREFIX}-color-brand) -150%, rgba(0, 0, 0, 0.3) 100%);
 	}
 
-	span {
+	// Align menu to the masthead hamburger
+	&.nav-open {
+		& .nav-container {
+			@media (min-width: $width-max) {
+				right: calc(50% - (#{$width-max} / 2) - 0.6px);
+			}
+		}
+	}
+
+	// Level titles
+	.nav-content {
+		h2, h3, h4, h5, h6 {
+			padding: .75em .75em 0;
+		}
+
+		.level-title {
+			background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 100%);
+			padding: .75em 0;
+		}
+	}
+
+	// Highlight current page
+	.nav-highlight>.nav-item-wrapper .nav-item-link {
+		background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) -50%, var(--#{$PREFIX}-color-highlight) 1500%);
+		text-shadow: 1px 1px 1px var(--#{$PREFIX}-color-main_menu-background);
+	}
+
+	// Divider for links with submenues
+	a.nav-next:before {
+		background-color: var(--#{$PREFIX}-color-main_menu-foreground);
+		opacity: 0.3;
+	}
+
+	// Differentiate back links
+	.nav-back {
+		//margin-bottom: .25em;
+		//padding-bottom: .25em;
+
+		a {
+			opacity: 0.8;
+			padding-left: 40px;
+		}
+
+		span {
+			position: absolute;
+			left: 0;
+		}
+	}
+
+	// Bottom nav area
+	ul.menu-bottom {
 		position: absolute;
+		z-index: 2;
+		bottom: 0;
 		left: 0;
+		width: 100%;
+		background-color: var(--#{$PREFIX}-color-main_menu-background);
+		background-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 101%);
+
+		&::before {
+			content: '';
+			background-image: linear-gradient(0, var(--#{$PREFIX}-color-main_menu-background), transparent);
+			height: 1.25em;
+			position: absolute;
+			top: -1.25em;
+			width: 100%;
+		}
 	}
+
 }
