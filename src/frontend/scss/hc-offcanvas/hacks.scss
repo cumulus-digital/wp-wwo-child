@@ -28,19 +28,3 @@
 .hc-offcanvas-nav a:focus-visible {
 	outline: 1px dotted #fff !important;
 }
-
-// Differentiate back links better
-.hc-offcanvas-nav .nav-back {
-	margin-bottom: .5em;
-	padding-bottom: .5em;
-	border-bottom: 2px solid rgba(255,255,255,0.3);
-
-	a {
-		padding-left: 40px;
-	}
-
-	span {
-		position: absolute;
-		left: 0;
-	}
-}

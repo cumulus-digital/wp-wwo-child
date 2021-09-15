@@ -19,8 +19,9 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 		insertClose: false,
 		disableBody: true,
 		levelTitles: true,
-		levelTitleAsBack: false,
+		levelTitleAsBack: true,
 		insertBack: -5,
+		labelBack: 'Home',
 		position: 'right',
 		width: 300,
 	});

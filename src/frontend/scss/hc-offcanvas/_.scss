@@ -51,7 +51,7 @@ body.hc-nav-open {
 	}
 
 	.nav-wrapper {
-		box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.5) !important;
+		box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.4) !important;
 	}
 }
 .hc-offcanvas-nav.disable-body::after {
@@ -74,7 +74,7 @@ body.hc-nav-open {
 .hc-offcanvas-nav .nav-content>h4,
 .hc-offcanvas-nav .nav-content>h5,
 .hc-offcanvas-nav .nav-content>h6 {
-	padding: 15px 15px 0;
+	padding: .75em .75em 0;
 }
 
 // Highlight current page
@@ -91,4 +91,31 @@ body.hc-nav-open {
 .hc-offcanvas-nav.disable-body.nav-open:after,
 .hc-offcanvas-nav .sub-level-open:after {
 	//backdrop-filter: blur(0.05em);
+}
+
+// Level title
+.hc-offcanvas-nav .nav-content>.level-title {
+	background: linear-gradient(180deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 100%);
+	padding: .75em 0;
+}
+
+// Divider for links with submenues
+.hc-offcanvas-nav a.nav-next:before {
+	background: linear-gradient(0deg, var(--#{$PREFIX}-color-main_menu-foreground) -400%, rgba(0,0,0,0) 300%);
+}
+
+// Differentiate back links better
+.hc-offcanvas-nav .nav-back {
+	//margin-bottom: .25em;
+	//padding-bottom: .25em;
+
+	a {
+		opacity: 0.8;
+		padding-left: 40px;
+	}
+
+	span {
+		position: absolute;
+		left: 0;
+	}
 }
