@@ -22,7 +22,15 @@ body.hc-nav-open {
 	background-color: var(--#{$PREFIX}-color-main_menu-background);
 	// Disable transition delay on hamburger background
 	transition-delay: 0s;
+	// Hamburger background expands right to left
+	width: 0%;
+	right: 0;
+	left: auto;
+	transition: width .07s linear;
 }
+	.masthead .menu-container .hamburger.is-active:after {
+		width: 100%;
+	}
 
 .hc-offcanvas-nav {
 
