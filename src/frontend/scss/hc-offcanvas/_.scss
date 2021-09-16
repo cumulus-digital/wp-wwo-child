@@ -18,7 +18,10 @@ body.hc-nav-open {
 }
 
 .masthead .menu-container .hamburger::after {
+	// Make hamburger background match menu
 	background-color: var(--#{$PREFIX}-color-main_menu-background);
+	// Disable transition delay on hamburger background
+	transition-delay: 0s;
 }
 
 .hc-offcanvas-nav {
