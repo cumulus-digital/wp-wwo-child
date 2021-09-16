@@ -29,7 +29,9 @@
 		mask-size: 65%;
 
 		@include hover {
-			background-color: var(--#{$PREFIX}-color-main_menu-foreground-hover_background);
+			background-color: var(--#{$PREFIX}-color-main_menu-foreground) !important;
+			opacity: 0.8;
+			transform: scale(1.3);
 		}
 	}
 }
