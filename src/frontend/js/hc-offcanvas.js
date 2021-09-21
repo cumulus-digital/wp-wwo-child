@@ -29,6 +29,16 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 			width: 300,
 		});
 		if (Nav && Nav.hasOwnProperty('on')) {
+			// Move back links above level title
+			const $Nav = $(Nav);
+			$Nav.find('.nav-wrapper .nav-back').each(function () {
+				const $back = $(this);
+				const $thisLevel = $back.parentsUntil('.nav-content');
+				$back.detach();
+				$thisLevel.parent().prepend($back);
+			});
+
+			// Hamburger toggles menu
 			Nav.on('toggle', () => $hamburger.toggleClass('is-active'));
 			$hamburger.on('click.' + window.THEME_PREFIX, () => Nav.toggle());
 

@@ -129,6 +129,12 @@ body.hc-nav-open {
 		}
 	}
 
+	.nav-item-link,
+	li.nav-close a,
+	.nav-back a {
+		padding: .6em .5em;
+	}
+
 	// Highlight current page
 	.nav-highlight>.nav-item-wrapper .nav-item-link {
 		background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) -50%, var(--#{$PREFIX}-color-highlight) 1500%);
@@ -143,17 +149,29 @@ body.hc-nav-open {
 
 	// Differentiate back links
 	.nav-back {
+		font-size: 0.9em;
+		margin: 1em 0 0;
 		//margin-bottom: .25em;
 		//padding-bottom: .25em;
 
 		a {
-			opacity: 0.8;
-			padding-left: 40px;
+			opacity: 0.75;
+			padding-left: 1.5em;
+
+			&:hover {
+				opacity: 1;
+			}
 		}
 
 		span {
 			position: absolute;
 			left: 0;
+			width: 1.5em;
+		}
+
+		+ .level-title {
+			margin-top: 0;
+			padding-top: .45em;
 		}
 	}
 
