@@ -67,7 +67,11 @@ body.hc-nav-open {
 	}
 
 	&.has-social-menu .nav-wrapper-0 > .nav-content {
-		padding-bottom: 3em;
+		padding-bottom: 3rem;
+	}
+
+	.nav-content {
+		padding: 0 .65rem;
 	}
 
 	.nav-custom-content {
@@ -89,13 +93,13 @@ body.hc-nav-open {
 		width: 100%;
 		height: 100%;
 		background: transparent;
-		backdrop-filter: blur(.045em) brightness(0.65);
+		backdrop-filter: blur(.045rem) brightness(0.65);
 		z-index: 999;
 	}
 
 	// Add a shadow to each level
 	.nav-wrapper {
-		box-shadow: 0 0 0.75em 0 rgba(0, 0, 0, 0.4) !important;
+		box-shadow: 0 0 0.75rem 0 rgba(0, 0, 0, 0.4) !important;
 	}
 
 	// Force background overlay below fixed masthead
@@ -120,19 +124,19 @@ body.hc-nav-open {
 	// Level titles
 	.nav-content {
 		h2, h3, h4, h5, h6 {
-			padding: .75em .75em 0;
+			padding: .75rem .75rem 0;
 		}
 
 		.level-title {
 			background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 100%);
-			padding: .75em 0;
+			padding: .8rem .5rem;
 		}
 	}
 
 	.nav-item-link,
 	li.nav-close a,
 	.nav-back a {
-		padding: .6em .5em;
+		padding: .6rem .5rem;
 	}
 
 	// Highlight current page
@@ -149,14 +153,14 @@ body.hc-nav-open {
 
 	// Differentiate back links
 	.nav-back {
-		font-size: 0.9em;
-		margin: 1em 0 0;
+		font-size: 0.75rem;
+		margin: .75rem 0 0;
 		//margin-bottom: .25em;
 		//padding-bottom: .25em;
 
 		a {
-			opacity: 0.75;
-			padding-left: 1.5em;
+			opacity: 0.5;
+			padding-left: 1.5rem;
 
 			&:hover {
 				opacity: 1;
@@ -166,12 +170,12 @@ body.hc-nav-open {
 		span {
 			position: absolute;
 			left: 0;
-			width: 1.5em;
+			width: 1.5rem;
 		}
 
 		+ .level-title {
 			margin-top: 0;
-			padding-top: .45em;
+			padding-top: .25rem;
 		}
 	}
 
@@ -188,9 +192,9 @@ body.hc-nav-open {
 		&::before {
 			content: '';
 			background-image: linear-gradient(0, var(--#{$PREFIX}-color-main_menu-background), transparent);
-			height: 1.25em;
+			height: 1.25rem;
 			position: absolute;
-			top: -1.25em;
+			top: -1.25rem;
 			width: 100%;
 		}
 
@@ -198,13 +202,13 @@ body.hc-nav-open {
 			display: block;
 			background: rgba(0,0,0,0.5);
 			color: var(--#{$PREFIX}-color-main_menu-foreground);
-			letter-spacing: .03em;
+			letter-spacing: .04rem;
 			line-height: 1;
-			font-size: .8em;
+			font-size: .65rem;
 			text-align: center;
 			text-transform: uppercase;
 			font-weight: bold;
-			padding: 1em .5em;
+			padding: .75rem .4rem;
 			opacity: 0.8;
 
 			&::before {
