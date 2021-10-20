@@ -12,7 +12,7 @@ namespace WWO_Child;
 	<li>
 		<form action="/" method="get">
 			<input type="hidden" name="t" value="any">
-			<input type="text" name="s" id="search" value="<?php \the_search_query(); ?>">
+			<input type="text" name="s" id="search" value="<?php \the_search_query(); ?>" aria-label="Search">
 			<input type="submit" value="Search">
 		</form>
 	</li>

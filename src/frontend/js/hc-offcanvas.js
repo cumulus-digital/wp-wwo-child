@@ -27,6 +27,7 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 			labelBack: 'Home',
 			position: 'right',
 			width: 300,
+			removeOriginalNav: true,
 		});
 		if (Nav && Nav.hasOwnProperty('on')) {
 			// Move back links above level title
