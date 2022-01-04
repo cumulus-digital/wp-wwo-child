@@ -14,7 +14,7 @@ use function CMLS_Base\has_social_menu;
 if ( has_header_menu() ):
 ?>
 <nav class="menu-container">
-	<button class="hamburger hamburger--spin" type="button"
+	<button class="hamburger hamburger--spin" type="button" tabindex="0"
 			aria-label="Open menu" aria-controls="header_menu" aria-expanded="false">
 		<span class="hamburger-box">
 		<span class="hamburger-inner"></span>

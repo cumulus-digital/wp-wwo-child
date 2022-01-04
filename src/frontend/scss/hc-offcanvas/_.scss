@@ -14,7 +14,12 @@ $hc-offcanvas-nav-transition-timing-function: linear;
 
 // Prevent body from losing its height when hc-nav disables it
 body.hc-nav-open {
+	overflow: hidden;
 	min-height: auto;
+
+	> main {
+		pointer-events: none;
+	}
 }
 
 .masthead .menu-container .hamburger::after {

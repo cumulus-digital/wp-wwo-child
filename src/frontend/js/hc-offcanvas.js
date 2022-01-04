@@ -20,6 +20,7 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 		const Nav = new hcOffcanvasNav($originalNav.get(0), {
 			//navTitle: 'Westwood One',
 			navClass: $originalNav.hasClass('has-social-menu') ? 'has-social-menu' : '',
+			customToggle: 'body > header .hamburger',
 			insertClose: false,
 			disableBody: true,
 			levelTitles: true,
@@ -59,17 +60,20 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 
 			// Hamburger toggles menu
 			Nav.on('toggle', () => $hamburger.toggleClass('is-active'));
-			$hamburger.on('click.' + window.THEME_PREFIX, () => Nav.toggle());
+			//$hamburger.on('click.' + window.THEME_PREFIX, () => Nav.toggle());
 
 			Nav.on('open', (e) => {
-				let $level = $Nav.find('li.level-open:last .nav-content:first a:first');
-				if (!$level.length) {
-					$level = $Nav.find('.nav-content:first a:first');
+				// Focus first tabbable element in open level
+				let $firstTab = $Nav.find('li.level-open:last .nav-content:first [tabindex=0]:first');
+				if (!$firstTab.length) {
+					$firstTab = $Nav.find('.nav-content:first [tabindex=0]:first');
 				}
-				$level.focus();
-				// Handle body clicks when menu is open
+				$firstTab.get(0).focus();
+
+				// Handle focus outside and body clicks when menu is open
 				$('html').on(
 					`click.{window.THEME_PREFIX}-hc-offcanvas-nav`,
+					//focusin.{window.THEME_PREFIX}-hc-offcanvas-nav`,
 					(e) => {
 						const context = {
 							'menu': $(Nav),
@@ -83,6 +87,20 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 						}
 					}
 				);
+
+				// handle focus on elements in other levels
+				/*
+				$Nav.find('a[tabindex=0]').on('focusin', (e) => {
+					if (Nav.isOpen() && !$Nav.find('li.level-open:last .nav-wrapper').first().has(e.target).length) {
+						const $parent = $(e.target).parentsUntil('.nav-wrapper').last().parent();
+						console.log($parent, Nav);
+						if ($parent.length) {
+							//Nav.open($parent.attr('data-level'), $parent.attr('data-index'));
+							Nav.closeLevel();
+						}
+					}
+				});
+				*/
 			});
 			Nav.on('close', () => {
 				$('html').off(`click.{window.THEME_PREFIX}-hc-offcanvas-nav`);
