@@ -16,6 +16,7 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 	const $hamburger = $('.masthead .hamburger');
 	const $originalNav = $('#header_menu');
 	if ($originalNav && $originalNav.length) {
+		// Initialize hcOffcanvasNav with our menu
 		const Nav = new hcOffcanvasNav($originalNav.get(0), {
 			//navTitle: 'Westwood One',
 			navClass: $originalNav.hasClass('has-social-menu') ? 'has-social-menu' : '',
@@ -30,8 +31,25 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 			removeOriginalNav: true,
 		});
 		if (Nav && Nav.hasOwnProperty('on')) {
-			// Move back links above level title
 			const $Nav = $(Nav);
+
+			// Add some accessibility back
+			$Nav.find('.hc-chk').each(function () {
+				// hc-offcanvas uses checkboxes for submenu state with no label...
+				const $cbox = $(this);
+				const $link = $cbox.siblings('.nav-item-wrapper').first().find('a');
+				if (!$link.attr('id')) {
+					$link.attr('id', `nav-${$cbox.attr('value')}`);
+				}
+				if ($link.length) {
+					$cbox.attr('title', `Expand ${$link.text()} Menu`);
+					$cbox.attr('aria-labelledby', `nav-${$cbox.attr('value')}`);
+				}
+			});
+			// No need for a role on the search container
+			$Nav.find('ul.search').attr('role', '');
+
+			// Move back links above level title
 			$Nav.find('.nav-wrapper .nav-back').each(function () {
 				const $back = $(this);
 				const $thisLevel = $back.parentsUntil('.nav-content');
@@ -43,8 +61,13 @@ const hcOffcanvasNav = require('hc-offcanvas-nav');
 			Nav.on('toggle', () => $hamburger.toggleClass('is-active'));
 			$hamburger.on('click.' + window.THEME_PREFIX, () => Nav.toggle());
 
-			// Handle body clicks when menu is open
-			Nav.on('open', () => {
+			Nav.on('open', (e) => {
+				let $level = $Nav.find('li.level-open:last .nav-content:first a:first');
+				if (!$level.length) {
+					$level = $Nav.find('.nav-content:first a:first');
+				}
+				$level.focus();
+				// Handle body clicks when menu is open
 				$('html').on(
 					`click.{window.THEME_PREFIX}-hc-offcanvas-nav`,
 					(e) => {

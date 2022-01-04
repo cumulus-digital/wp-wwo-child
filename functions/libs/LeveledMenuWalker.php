@@ -49,6 +49,8 @@ public function start_el( &$output, $item, $depth = 0, $args = [], $id = 0 ) {
 			' rel="' . \esc_attr( $item->xfn ) . '"' : '';
 		$attributes .= ! empty( $item->url ) ?
 			' href="' . \esc_attr( $item->url ) . '"' : '';
+		$attributes .= ! empty( $item->role ) ?
+			' role="' . \esc_attr( $item->role ) . '"' : ' role="menuitem"';
 		$attributes .= ' itemprop="url"';
 
 		if ( \is_array( $args ) ) {
