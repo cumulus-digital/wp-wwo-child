@@ -1,10 +1,6 @@
 {
     "version": 1,
-    "settings": {
-		"layout": {
-			"contentSize": "1200px"
-		}
-	},
+    "settings": {},
     "styles": {},
     "customTemplates": {},
     "templateParts": {}
