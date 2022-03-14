@@ -24,10 +24,10 @@ body > footer .logo {
 .widget_tag_cloud a,
 .widget-container .wp-block-latest-posts a {
 	margin-right: .25em;
-	text-decoration: none;
+	text-decoration-line: none;
 
 	@include hover {
-		text-decoration: underline;
+		text-decoration-line: underline;
 	}
 }
 

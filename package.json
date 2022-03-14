@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/cumulus-digital/wp-wwo-child#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^22.0.1",
+    "@wordpress/scripts": "^22.2.1",
     "hc-offcanvas-nav": "^6.1.3",
     "jquery": "^3.6.0"
   },
