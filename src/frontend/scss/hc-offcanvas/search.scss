@@ -1,12 +1,46 @@
-.hc-offcanvas-nav .search {
-
+.hc-offcanvas-nav .search-item {
 	.nav-item-link {
 		padding-top: 0;
 	}
 
+	.search-form {
+		font-size: 0.8em;
+	}
+
+	.search-inside_wrapper {
+		background: #fff;
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		opacity: 0.6;
+		transition: opacity 0.15s;
+
+		min-width: 100%;
+		width: 10em;
+
+		@include hover {
+			opacity: 1;
+		}
+		&:focus-within {
+			opacity: 1;
+		}
+	}
+	input[type='search'] {
+		background: transparent;
+		border: 0;
+		color: #000;
+	}
+	button {
+		background: var(--#{$PREFIX}-color-brand, #000);
+		color: #fff;
+
+		@include hover {
+			background: var(--#{$PREFIX}-color-highlight);
+		}
+	}
+
+	/*
 	form {
 		display: flex;
-		gap: .5em;
+		gap: 0.5em;
 
 		&:focus-within {
 			input {
@@ -20,18 +54,18 @@
 		font-size: 1em;
 		line-height: 1;
 		border: 0;
-		border-radius: .15em;
-		padding: .25em .5em;
+		border-radius: 0.15em;
+		padding: 0.25em 0.5em;
 		width: 100%;
 		opacity: 0.75;
-		transition: all .15s;
+		transition: all 0.15s;
 
 		&:focus,
 		&:focus-visible {
 			outline: var(--#{$PREFIX}-color-highlight) auto 1px;
 		}
 
-		&[type="submit"] {
+		&[type='submit'] {
 			border: 1px solid transparent;
 			background: var(--#{$PREFIX}-color-brand);
 			color: #fff;
@@ -41,8 +75,9 @@
 
 			@include hover {
 				background: var(--#{$PREFIX}-color-highlight);
-				text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+				text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 			}
 		}
 	}
+	*/
 }

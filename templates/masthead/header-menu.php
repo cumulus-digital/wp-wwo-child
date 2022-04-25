@@ -23,7 +23,11 @@ if ( has_header_menu() ):
 	<div class="menu <?php echo has_social_menu() ? 'has-social-menu' : ''; ?>" id="header_menu" aria-label="Main Menu">
 		<?php header_menu(); ?>
 		<?php if ( \CMLS_Base\themeMods::get( 'setting-main_menu-include_search' ) ): ?>
-			<?php \CMLS_Base\cmls_get_template_part( 'templates/masthead/search' ); ?>
+		<ul class="search-item">
+			<li>
+				<?php \CMLS_Base\cmls_get_template_part( 'templates/masthead/search' ); ?>
+			</li>
+		</ul>
 		<?php endif; ?>
 		<ul class="menu-bottom">
 			<li data-nav-custom-content>
