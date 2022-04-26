@@ -52,3 +52,12 @@ function __return_null_and_remove_current_filter( $var ) {
 
 	return null;
 }
+
+// Blog posts should display author and date in search
+\add_filter( 'display-archive-all', function ( $args ) {
+	if ( \is_search() && \in_the_loop() && \has_category( ['blog', 'podcast-insights'] ) ) {
+		return \array_merge( $args, [ 'show_author' => true, 'show_date' => true ] );
+	}
+
+	return $args;
+} );
