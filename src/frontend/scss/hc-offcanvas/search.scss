@@ -3,11 +3,11 @@
 		padding-top: 0;
 	}
 
-	.search-form {
+	.compact-form {
 		font-size: 0.8em;
 	}
 
-	.search-inside_wrapper {
+	.compact-form--inside_wrapper {
 		background: #fff;
 		border: 1px solid rgba(255, 255, 255, 0.4);
 		opacity: 0.6;
@@ -23,7 +23,7 @@
 			opacity: 1;
 		}
 	}
-	input[type='search'] {
+	input[type="search"] {
 		background: transparent;
 		border: 0;
 		color: #000;
