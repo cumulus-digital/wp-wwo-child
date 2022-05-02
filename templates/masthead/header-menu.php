@@ -25,7 +25,7 @@ if ( has_header_menu() ):
 		<?php if ( \CMLS_Base\themeMods::get( 'setting-main_menu-include_search' ) ): ?>
 		<ul class="search-item">
 			<li>
-				<?php \CMLS_Base\cmls_get_template_part( 'templates/masthead/search' ); ?>
+				<?php \CMLS_Base\cmls_get_template_part( 'templates/masthead/search', null, [ 'role' => 'menuitem' ] ); ?>
 			</li>
 		</ul>
 		<?php endif; ?>
