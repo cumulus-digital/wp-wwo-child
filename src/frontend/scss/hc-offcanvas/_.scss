@@ -2,15 +2,15 @@
  * Customization for HC-OffCanvas Menu
  */
 
-$hc-offcanvas-nav-transition-duration: .15s;
+$hc-offcanvas-nav-transition-duration: 0.15s;
 $hc-offcanvas-nav-transition-timing-function: linear;
 
-@import 'hc-offcanvas-nav/src/scss/core';
-@import 'hc-offcanvas-nav/src/scss/theme-carbon';
-@import './hacks.scss';
-@import './customizer.scss';
-@import './search.scss';
-@import './social.scss';
+@import "hc-offcanvas-nav/src/scss/core";
+@import "hc-offcanvas-nav/src/scss/theme-carbon";
+@import "./hacks.scss";
+@import "./customizer.scss";
+@import "./search.scss";
+@import "./social.scss";
 
 // Prevent body from losing its height when hc-nav disables it
 body.hc-nav-open {
@@ -31,29 +31,31 @@ body.hc-nav-open {
 	width: 0%;
 	right: 0;
 	left: auto;
-	transition: width .07s linear;
+	transition: width 0.07s linear;
 }
-	.masthead .menu-container .hamburger.is-active:after {
-		width: 100%;
-	}
+.masthead .menu-container .hamburger.is-active:after {
+	width: 100%;
+}
 
 .hc-offcanvas-nav {
-
-	font-size: .8rem;
+	font-size: 0.8rem;
 
 	@include phone {
 		font-size: 1rem;
 	}
 
 	// Open below fixed masthead
-	&,& .nav-container {
+	&,
+	& .nav-container {
 		display: flex;
 		flex-direction: column;
 
 		// needed to fix minification error
 		--wp-admin-bar-height: -1px;
 		--menu-height: calc(var(--vh100) - var(--#{$PREFIX}-masthead-height));
-		top: calc(var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height));
+		top: calc(
+			var(--#{$PREFIX}-masthead-height) + var(--wp-admin-bar-height)
+		);
 		height: calc(var(--menu-height) - var(--wp-admin-bar-height));
 		z-index: 199;
 
@@ -76,7 +78,7 @@ body.hc-nav-open {
 	}
 
 	.nav-content {
-		padding: 0 .65rem;
+		padding: 0 0.65rem;
 	}
 
 	.nav-custom-content {
@@ -98,7 +100,7 @@ body.hc-nav-open {
 		width: 100%;
 		height: 100%;
 		background: transparent;
-		backdrop-filter: blur(.045rem) brightness(0.65);
+		backdrop-filter: blur(0.045rem) brightness(0.65);
 		z-index: 999;
 	}
 
@@ -113,8 +115,13 @@ body.hc-nav-open {
 	}
 
 	// Backdrop when disabling body
-	&:after, .nav-wrapper:after {
-		background: linear-gradient(0deg, var(--#{$PREFIX}-color-brand) -150%, rgba(0, 0, 0, 0.3) 100%);
+	&:after,
+	.nav-wrapper:after {
+		background: linear-gradient(
+			0deg,
+			var(--#{$PREFIX}-color-brand) -150%,
+			rgba(0, 0, 0, 0.3) 100%
+		);
 	}
 
 	// Align menu to the masthead hamburger
@@ -128,25 +135,37 @@ body.hc-nav-open {
 
 	// Level titles
 	.nav-content {
-		h2, h3, h4, h5, h6 {
-			padding: .75rem .75rem 0;
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			padding: 0.75rem 0.75rem 0;
 		}
 
 		.level-title {
-			background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 99%, var(--#{$PREFIX}-color-main_menu-foreground) 100%);
-			padding: .8rem .5rem;
+			background-image: linear-gradient(
+				180deg,
+				rgba(0, 0, 0, 0) 99%,
+				var(--#{$PREFIX}-color-main_menu-foreground) 100%
+			);
+			padding: 0.8rem 0.5rem;
 		}
 	}
 
 	.nav-item-link,
 	li.nav-close a,
 	.nav-back a {
-		padding: .6rem .5rem;
+		padding: 0.6rem 0.5rem;
 	}
 
 	// Highlight current page
-	.nav-highlight>.nav-item-wrapper .nav-item-link {
-		background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) -50%, var(--#{$PREFIX}-color-highlight) 1500%);
+	.nav-highlight > .nav-item-wrapper .nav-item-link {
+		background-image: linear-gradient(
+			180deg,
+			rgba(0, 0, 0, 0) -50%,
+			var(--#{$PREFIX}-color-highlight) 1500%
+		);
 		text-shadow: 1px 1px 1px var(--#{$PREFIX}-color-main_menu-background);
 	}
 
@@ -159,7 +178,7 @@ body.hc-nav-open {
 	// Differentiate back links
 	.nav-back {
 		font-size: 0.75rem;
-		margin: .75rem 0 0;
+		margin: 0.75rem 0 0;
 		//margin-bottom: .25em;
 		//padding-bottom: .25em;
 
@@ -180,8 +199,15 @@ body.hc-nav-open {
 
 		+ .level-title {
 			margin-top: 0;
-			padding-top: .25rem;
+			padding-top: 0.25rem;
 		}
+	}
+
+	.password-protected > .nav-item-wrapper > .nav-item-link::before {
+		content: "\1F512\00FE0E";
+		color: transparent;
+		text-shadow: 0 0 1px var(--#{$PREFIX}-color-main_menu-foreground);
+		margin-right: 0.5em;
 	}
 
 	// Bottom nav area
@@ -195,8 +221,12 @@ body.hc-nav-open {
 		//background-image: linear-gradient(180deg, var(--#{$PREFIX}-color-main_menu-foreground) 0%, rgba(0, 0, 0, 0) 1.5%);
 
 		&::before {
-			content: '';
-			background-image: linear-gradient(0, var(--#{$PREFIX}-color-main_menu-background), transparent);
+			content: "";
+			background-image: linear-gradient(
+				0,
+				var(--#{$PREFIX}-color-main_menu-background),
+				transparent
+			);
 			height: 1.25rem;
 			position: absolute;
 			top: -1.25rem;
@@ -205,22 +235,23 @@ body.hc-nav-open {
 
 		.affiliate-login {
 			display: block;
-			background: rgba(0,0,0,0.5);
+			background: rgba(0, 0, 0, 0.5);
 			color: var(--#{$PREFIX}-color-main_menu-foreground);
-			letter-spacing: .04rem;
+			letter-spacing: 0.04rem;
 			line-height: 1;
-			font-size: .65rem;
+			font-size: 0.65rem;
 			text-align: center;
 			text-transform: uppercase;
 			font-weight: bold;
-			padding: .75rem .4rem;
+			padding: 0.75rem 0.4rem;
 			opacity: 0.8;
 
 			&::before {
-				content: '\1F512\00FE0E';
+				content: "\1F512\00FE0E";
 				color: transparent;
-				text-shadow: 0 0 1px var(--#{$PREFIX}-color-main_menu-foreground);
-				margin-right: .5em;
+				text-shadow: 0 0 1px
+					var(--#{$PREFIX}-color-main_menu-foreground);
+				margin-right: 0.5em;
 			}
 
 			@include phone {
@@ -228,10 +259,11 @@ body.hc-nav-open {
 			}
 
 			@include hover {
-				background: var(--#{$PREFIX}-color-main_menu-foreground-hover_background);
+				background: var(
+					--#{$PREFIX}-color-main_menu-foreground-hover_background
+				);
 				opacity: 1;
 			}
 		}
 	}
-
 }
