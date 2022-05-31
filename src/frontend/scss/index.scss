@@ -41,23 +41,14 @@ body > footer .logo {
 
 	.wp-block-latest-posts__post-title {
 		display: block;
-		margin-bottom: 0.25em;
+		margin-bottom: 0.15em;
+		margin-right: 0;
 	}
 }
-
-@import "./hc-offcanvas/_";
-
-// Blog/press release post titles
-.single-post .category-blog,
-.single-post .category-podcast-insights,
-.single-post .category-press-releease {
-	.page_title h1 {
-		font-size: 1.5rem;
-	}
-}
-
-.page_title-meta {
+.page_title-meta,
+.wp-block-latest-posts__post-meta {
 	font-size: 0.75rem;
+	letter-spacing: 0.02em;
 	margin-bottom: 1em;
 
 	> *::after {
@@ -69,5 +60,24 @@ body > footer .logo {
 	> *:last-child::after {
 		content: "";
 		display: none;
+	}
+}
+.wp-block-latest-posts__post-meta {
+	margin-bottom: 0;
+
+	.wp-block-latest-posts__post-date,
+	.wp-block-latest-posts__post-author {
+		display: inline;
+	}
+}
+
+@import "./hc-offcanvas/_";
+
+// Blog/press release post titles
+.single-post .category-blog,
+.single-post .category-podcast-insights,
+.single-post .category-press-releease {
+	.page_title h1 {
+		font-size: 1.5rem;
 	}
 }
