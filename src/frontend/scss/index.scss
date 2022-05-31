@@ -1,10 +1,10 @@
-@supports (backdrop-filter: blur(.25em)) {
+@supports (backdrop-filter: blur(0.25em)) {
 	body > .masthead {
-		backdrop-filter: blur(.25em);
+		backdrop-filter: blur(0.25em);
 	}
 }
 
-body > .masthead .logo a  {
+body > .masthead .logo a {
 	@include hover {
 		img {
 			filter: none;
@@ -18,17 +18,56 @@ body > footer .logo {
 // Widget links
 .wp-block-tag-cloud a,
 .widget_tag_cloud a {
-	margin-right: .15em;
+	margin-right: 0.15em;
 }
 .wp-block-tag-cloud a,
 .widget_tag_cloud a,
 .widget-container .wp-block-latest-posts a {
-	margin-right: .25em;
+	margin-right: 0.25em;
 	text-decoration-line: none;
+	line-height: 1.1;
 
 	@include hover {
 		text-decoration-line: underline;
 	}
 }
+.widget-container .wp-block-latest-posts {
+	line-height: 1.3;
+	font-size: 1em;
 
-@import './hc-offcanvas/_';
+	> li {
+		margin-bottom: 1em;
+	}
+
+	.wp-block-latest-posts__post-title {
+		display: block;
+		margin-bottom: 0.25em;
+	}
+}
+
+@import "./hc-offcanvas/_";
+
+// Blog/press release post titles
+.single-post .category-blog,
+.single-post .category-podcast-insights,
+.single-post .category-press-releease {
+	.page_title h1 {
+		font-size: 1.5rem;
+	}
+}
+
+.page_title-meta {
+	font-size: 0.75rem;
+	margin-bottom: 1em;
+
+	> *::after {
+		content: " | ";
+		margin: 0 0.25em;
+		opacity: 0.5;
+	}
+
+	> *:last-child::after {
+		content: "";
+		display: none;
+	}
+}

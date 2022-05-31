@@ -61,3 +61,15 @@ function __return_null_and_remove_current_filter( $var ) {
 
 	return $args;
 } );
+
+// Singular blog posts should display author and date
+\add_action( 'cmls_template-post-after_title', function () {
+	if ( \is_singular() && \has_category( ['blog', 'podcast-insights'] ) ) {
+		?>
+		<div class="page_title-meta">
+			<span class="page_title-meta__date"><?php \the_date(); ?></span>
+			By <span class="page_title-meta__author"><?php \the_author(); ?></span>
+		</div>
+		<?php
+	}
+} );
