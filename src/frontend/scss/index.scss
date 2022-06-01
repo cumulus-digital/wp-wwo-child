@@ -21,8 +21,7 @@ body > footer .logo {
 	margin-right: 0.15em;
 }
 .wp-block-tag-cloud a,
-.widget_tag_cloud a,
-.widget-container .wp-block-latest-posts a {
+.widget_tag_cloud a {
 	margin-right: 0.25em;
 	text-decoration-line: none;
 	line-height: 1.1;
@@ -42,7 +41,11 @@ body > footer .logo {
 	.wp-block-latest-posts__post-title {
 		display: block;
 		margin-bottom: 0.15em;
-		margin-right: 0;
+		text-decoration-line: none;
+
+		@include hover {
+			text-decoration-line: underline;
+		}
 	}
 }
 .page_title-meta,
@@ -80,4 +83,8 @@ body > footer .logo {
 	.page_title h1 {
 		font-size: 1.5rem;
 	}
+}
+
+body > footer {
+	-webkit-text-stroke: 0.35px rgba(0, 0, 0, 0.1);
 }
