@@ -37,7 +37,8 @@
   "devDependencies": {
     "@wordpress/scripts": "^23.1.0",
     "hc-offcanvas-nav": "^6.1.3",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "prettier": "npm:wp-prettier@^2.6.2"
   },
   "browserslist": [
     "last 3 versions or > 1%"

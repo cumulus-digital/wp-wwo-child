@@ -34,9 +34,10 @@ function frontendScriptsAndStyles() {
 		\wp_enqueue_style( CHILD_PREFIX . '_style' );
 	}
 }
-\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\frontendScriptsAndStyles' );
+\add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\\frontendScriptsAndStyles', 1 );
 
 // Do not add srcset if we specifically request full size images
+/*
 \add_filter( 'post_thumbnail_size', function ( $size ) {
 	if ( \is_string( $size ) && 'full' === $size ) {
 		\add_filter(
@@ -52,6 +53,7 @@ function __return_null_and_remove_current_filter( $var ) {
 
 	return null;
 }
+*/
 
 // Blog posts should display author and date in search
 \add_filter( 'display-archive-all', function ( $args ) {
