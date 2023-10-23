@@ -30,7 +30,7 @@ function frontendScriptsAndStyles()
 			\CMLS_Base\child_theme_url() . '/build/child_frontend.css',
 			[PARENT_PREFIX . '_style'],
 			null,
-			'all'
+			'screen'
 		);
 		\wp_enqueue_style( CHILD_PREFIX . '_style' );
 	}
