@@ -34,15 +34,16 @@
   },
   "homepage": "https://github.com/cumulus-digital/wp-wwo-child#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^28.4.0",
-    "hc-offcanvas-nav": "^6.1.3",
-    "jquery": "^3.6.0",
-    "prettier": "npm:wp-prettier@^2.6.2"
+    "@wordpress/scripts": "^36.0.0",
+    "hc-offcanvas-nav": "^6.2.5",
+    "jquery": "^4.0.0",
+    "prettier": "npm:wp-prettier@^3.9.6",
+    "sass": "~1.83.4"
   },
   "browserslist": [
     "defaults"
   ],
   "dependencies": {
-    "bourbon": "^7.0.0"
+    "sass": "~1.83.4"
   }
 }
